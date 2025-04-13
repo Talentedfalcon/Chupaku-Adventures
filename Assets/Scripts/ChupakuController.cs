@@ -49,8 +49,10 @@ public class ChupakuController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)){
             if(Time.time>=lastUsedTime+cooldownDuration){
                 CreateBullet();
-                PlayBulletSoundFX();
-
+                if(!Power360)
+                    PlayBulletSoundFX();
+                else
+                    StartCoroutine(AudioFXManager.instance.PlayAllSoundFX(blips,transform,100,0.1f));
                 lastUsedTime=Time.time;
             }
         }
@@ -63,10 +65,10 @@ public class ChupakuController : MonoBehaviour
         }
 
         if(vertical_input<0){
-            transform.rotation=Quaternion.Euler(-90,45-((horizontal_input==0)?0:MathF.Sign(horizontal_input)*45),0);
+            transform.rotation=Quaternion.Euler(-90,45-((Math.Abs(horizontal_input)<=0.5)?0:MathF.Sign(horizontal_input)*45),0);
         }
         else if(vertical_input>0){
-            transform.rotation=Quaternion.Euler(-90,-135+((horizontal_input==0)?0:MathF.Sign(horizontal_input)*45),0);
+            transform.rotation=Quaternion.Euler(-90,-135+((Math.Abs(horizontal_input)<=0.5)?0:MathF.Sign(horizontal_input)*45),0);
         }
 
         transform.Translate(new Vector3(-vertical_input*speed*Time.deltaTime,0,horizontal_input*speed*Time.deltaTime),reference.transform);
@@ -78,16 +80,22 @@ public class ChupakuController : MonoBehaviour
     }
 
     private void PlayBulletSoundFX(){
-        if(transform.rotation==Quaternion.Euler(-90,135,0))
+        if(transform.rotation==Quaternion.Euler(-90,90,0))
             AudioFXManager.instance.PlaySoundFX(blips[0],transform,100);
-        else if(transform.rotation==Quaternion.Euler(-90,-45,0))
+        if(transform.rotation==Quaternion.Euler(-90,45,0))
             AudioFXManager.instance.PlaySoundFX(blips[1],transform,100);
-        else if(transform.rotation==Quaternion.Euler(-90,45,0))
+        else if(transform.rotation==Quaternion.Euler(-90,0,0))
             AudioFXManager.instance.PlaySoundFX(blips[2],transform,100);
-        else if(transform.rotation==Quaternion.Euler(-90,-135,0))
+        else if(transform.rotation==Quaternion.Euler(-90,-45,0))
             AudioFXManager.instance.PlaySoundFX(blips[3],transform,100);
-        else
+        else if(transform.rotation==Quaternion.Euler(-90,-90,0))
             AudioFXManager.instance.PlaySoundFX(blips[4],transform,100);
+        else if(transform.rotation==Quaternion.Euler(-90,-135,0))
+            AudioFXManager.instance.PlaySoundFX(blips[5],transform,100);
+        else if(transform.rotation==Quaternion.Euler(-90,-180,0))
+            AudioFXManager.instance.PlaySoundFX(blips[6],transform,100);
+        else if(transform.rotation==Quaternion.Euler(-90,135,0))
+            AudioFXManager.instance.PlaySoundFX(blips[7],transform,100);
     }
 
     //Implement a 360 shot mode

@@ -597,7 +597,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1197500833}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6262c8eab8c519438ab05faeab4a220, type: 3}
   m_Name: 
@@ -1095,30 +1095,6 @@ PrefabInstance:
       propertyPath: GameOverUI
       value: 
       objectReference: {fileID: 1457737013}
-    - target: {fileID: 2822036622675834191, guid: 07934b7cbddabe444958e9eb99ca4acb, type: 3}
-      propertyPath: blips.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2822036622675834191, guid: 07934b7cbddabe444958e9eb99ca4acb, type: 3}
-      propertyPath: blips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9fa7a9d086c71a04b95c7898a5c5327f, type: 3}
-    - target: {fileID: 2822036622675834191, guid: 07934b7cbddabe444958e9eb99ca4acb, type: 3}
-      propertyPath: blips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 5d5729f2d20bc4d4495ec6293c1c3e59, type: 3}
-    - target: {fileID: 2822036622675834191, guid: 07934b7cbddabe444958e9eb99ca4acb, type: 3}
-      propertyPath: blips.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 02a13d767c87b4249ba34cdee7bd9451, type: 3}
-    - target: {fileID: 2822036622675834191, guid: 07934b7cbddabe444958e9eb99ca4acb, type: 3}
-      propertyPath: blips.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: 050115434c743b444887c21337dc9125, type: 3}
-    - target: {fileID: 2822036622675834191, guid: 07934b7cbddabe444958e9eb99ca4acb, type: 3}
-      propertyPath: blips.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: cf5f4fca436cee84cb044b1689e31929, type: 3}
     - target: {fileID: 4085352577774944470, guid: 07934b7cbddabe444958e9eb99ca4acb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0

@@ -166,4 +166,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7e009ef3aa78db142bd1020719093f56, type: 3}
   - {fileID: 8300000, guid: a4b8b8c90fcf7014196ddfafe12f399d, type: 3}
   - {fileID: 8300000, guid: 46abf0742920f6345b1f1517cc89be55, type: 3}
-  blips: []
+  blips:
+  - {fileID: 8300000, guid: 8bbf33cedb252084699cca9c025ebb25, type: 3}
+  - {fileID: 8300000, guid: 286450bd883d9eb48843799e87d257c8, type: 3}
+  - {fileID: 8300000, guid: 8bf8a5c125e1bef4dbe29154a75a13d1, type: 3}
+  - {fileID: 8300000, guid: f233f973f4b79264097070a74229088f, type: 3}
+  - {fileID: 8300000, guid: 10927bad2d888044287a8b5057cea685, type: 3}
+  - {fileID: 8300000, guid: 09521a09824b76143a1e6e47e53414c6, type: 3}
+  - {fileID: 8300000, guid: 7d6702478f6b8024fa1ce5a062c5a7e3, type: 3}
+  - {fileID: 8300000, guid: 322fadbe7d3b91f43946d1d5fee649eb, type: 3}

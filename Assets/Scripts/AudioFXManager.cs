@@ -22,6 +22,7 @@ public class AudioFXManager : MonoBehaviour
 
         Destroy(audioSource.gameObject,clipLength);
     }
+
     public void PlayRandomSoundFX(AudioClip[] audios,Transform spawnTransform,float volume){
         AudioSource audioSource=Instantiate(soundFXObject,spawnTransform.position,Quaternion.identity);
         audioSource.clip=audios[Random.Range(0,audios.Length)];
@@ -30,5 +31,13 @@ public class AudioFXManager : MonoBehaviour
         float clipLength=audioSource.clip.length;
 
         Destroy(audioSource.gameObject,clipLength);
+    }
+
+    public IEnumerator PlayAllSoundFX(AudioClip[] audios,Transform spawnTransform,float volume,float delay){
+        foreach (var audio in audios)
+        {
+            yield return new WaitForSeconds(delay);
+            PlaySoundFX(audio,spawnTransform,volume);
+        }
     }
 }
