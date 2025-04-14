@@ -606,6 +606,11 @@ MonoBehaviour:
   target: {fileID: 919132147776912235}
   plane: {fileID: 1612127340}
   EnemyCount: 0
+  enemyDieSounds:
+  - {fileID: 8300000, guid: 4e3210e58a2e920458ce3db7415b7743, type: 3}
+  - {fileID: 8300000, guid: 8609f6d80554bdf4ea6e5d47cb660bc6, type: 3}
+  - {fileID: 8300000, guid: ccc303f741cea0c448c7220092f9ada0, type: 3}
+  - {fileID: 8300000, guid: 8a7b164cc8a8c3b478630dd47a5e495e, type: 3}
 --- !u!4 &1197500835
 Transform:
   m_ObjectHideFlags: 0
@@ -639,6 +644,7 @@ MonoBehaviour:
   Power360: {fileID: 5677914598357056133, guid: 761f8c8090c04464185cd84e1a262507, type: 3}
   CountPlusOne: 0
   CountPower360: 0
+  collectPowerupAudio: {fileID: 8300000, guid: c43158ba297beb14bb03c0b91cdbca3d, type: 3}
 --- !u!1 &1363974673
 GameObject:
   m_ObjectHideFlags: 0

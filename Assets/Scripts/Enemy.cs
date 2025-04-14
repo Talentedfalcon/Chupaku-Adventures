@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     public GameObject Character;
     public GameObject Spawner;
+    public AudioClip[] enemyDieSounds;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {   
         if (other.gameObject.CompareTag("Bullet")){
+            AudioFXManager.instance.PlayRandomSoundFX(enemyDieSounds,transform,100);
             Spawner.GetComponent<EnemySpawner>().EnemyCount-=1;
             Character.GetComponent<ChupakuController>().points+=10;
             Destroy(other.gameObject);

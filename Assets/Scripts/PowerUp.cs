@@ -6,6 +6,7 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
     public GameObject Spawner;
+    public AudioClip collectPowerupAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,7 @@ public class PowerUp : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player")){
+            AudioFXManager.instance.PlaySoundFX(collectPowerupAudio,transform,100);
             if(gameObject.CompareTag("PlusOnePower")){
                 other.gameObject.GetComponent<ChupakuController>().PlusOnePower+=1;
                 Destroy(gameObject);

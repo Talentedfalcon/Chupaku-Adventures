@@ -12,6 +12,7 @@ public class PowerUpSpawner : MonoBehaviour
     public int CountPlusOne=0;
     private int MaxPlusOne=50;
     public int CountPower360=0;
+    public AudioClip collectPowerupAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +35,13 @@ public class PowerUpSpawner : MonoBehaviour
         if(PowerName=="Plus One"){
             GameObject p=Instantiate(PlusOnePower,GenerateSpawnPosition(),PlusOnePower.transform.rotation);
             p.GetComponent<PowerUp>().Spawner=gameObject;
+            p.GetComponent<PowerUp>().collectPowerupAudio=collectPowerupAudio;
             CountPlusOne+=1;
         }
         else if(PowerName=="Power 360"){
             GameObject p=Instantiate(Power360,GenerateSpawnPosition(),Power360.transform.rotation);
             p.GetComponent<PowerUp>().Spawner=gameObject;
+            p.GetComponent<PowerUp>().collectPowerupAudio=collectPowerupAudio;
             CountPower360+=1;
         }
     }

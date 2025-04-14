@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
     private int TotalEnemies=0;
     private float speed=6f;
     private int MaxEnemies=100;
+    public AudioClip[] enemyDieSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class EnemySpawner : MonoBehaviour
         e.GetComponent<Enemy>().speed=speed;
         e.GetComponent<Enemy>().Character=target;
         e.GetComponent<Enemy>().Spawner=gameObject;
+        e.GetComponent<Enemy>().enemyDieSounds=enemyDieSounds;
     }
 
     private Vector3 GenerateSpawnPosition(){

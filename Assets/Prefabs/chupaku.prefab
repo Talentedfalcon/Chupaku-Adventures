@@ -175,3 +175,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 09521a09824b76143a1e6e47e53414c6, type: 3}
   - {fileID: 8300000, guid: 7d6702478f6b8024fa1ce5a062c5a7e3, type: 3}
   - {fileID: 8300000, guid: 322fadbe7d3b91f43946d1d5fee649eb, type: 3}
+  playerHitAudios:
+  - {fileID: 8300000, guid: 0052ac5884703cd48911d7940f1636cf, type: 3}
+  - {fileID: 8300000, guid: 2b3aa498c91587d449f620ae3a0cd7e8, type: 3}
+  - {fileID: 8300000, guid: 662c215e3a3f5774cb856cefb37ebb55, type: 3}
+  - {fileID: 8300000, guid: 5b1ce609fb3772d4282f77cd4e0905c3, type: 3}
+  playerDieAudio: {fileID: 8300000, guid: 55fa8fce329540f4d9dcd42bdecf4789, type: 3}

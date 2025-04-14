@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ChupakuController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class ChupakuController : MonoBehaviour
     public bool gameOver=false;
     public AudioClip[] jumps;
     public AudioClip[] blips;
+    public AudioClip[] playerHitAudios;
+    public AudioClip playerDieAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -139,6 +142,7 @@ public class ChupakuController : MonoBehaviour
     }
 
     private void KillPlayer(){
+        AudioFXManager.instance.PlaySoundFX(playerDieAudio,transform,100);
         gameOver=true;
         GetComponent<MeshRenderer>().enabled=false;
         Destroy(GameObject.FindGameObjectWithTag("MiniMap"));
@@ -155,6 +159,7 @@ public class ChupakuController : MonoBehaviour
                     KillPlayer();
                     return;
                 }
+                AudioFXManager.instance.PlayRandomSoundFX(playerHitAudios,transform,100);
                 StartCoroutine(Blink());
                 Vector3 pushDirection=(transform.position-other.transform.position).normalized;
                 pushDirection=new Vector3(pushDirection.x,0,pushDirection.z);
