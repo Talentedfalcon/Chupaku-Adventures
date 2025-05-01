@@ -23,6 +23,7 @@ public class ChupakuController : MonoBehaviour
     public AudioClip[] blips;
     public AudioClip[] playerHitAudios;
     public AudioClip playerDieAudio;
+    public AudioSource globalMusic;
     // Start is called before the first frame update
     void Start()
     {
@@ -148,6 +149,7 @@ public class ChupakuController : MonoBehaviour
         Destroy(GameObject.FindGameObjectWithTag("MiniMap"));
         GameOverUI.SetActive(true);
         GameOverUI.GetComponent<Score>().score=points;
+        globalMusic.volume=0.8f;
         Destroy(gameObject);
     }
 
