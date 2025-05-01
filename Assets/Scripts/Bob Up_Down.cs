@@ -12,7 +12,8 @@ public class BobUp_Down : MonoBehaviour
 
     private float lastUsedTime=0f;
     private float cooldownDuration=0.25f;
-    private Vector3 BobDirection=new Vector3(0,0f,0.5f);
+    public Vector3 BobDirection=new Vector3(0,0f,0.5f);
+    public bool spin=false;
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +22,8 @@ public class BobUp_Down : MonoBehaviour
             lastUsedTime=Time.time;
         }
         transform.Translate(BobDirection*Time.deltaTime);
-        // transform.Rotate(new Vector3(0,100,0)*Time.deltaTime);
+        if(spin){
+            transform.Rotate(new Vector3(0,100,0)*Time.deltaTime);
+        }
     }
 }
